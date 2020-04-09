@@ -1,0 +1,8 @@
+.ToDoList-grid {
+  display: grid;
+  grid-template-columns: 0.25fr;
+  justify-content: center;
+}
+.ToDoList h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}

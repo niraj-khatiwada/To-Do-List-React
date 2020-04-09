@@ -1,0 +1,23 @@
+.ToDoForm{
+    margin: 1rem 0;
+    background-color: teal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 9rem;
+}
+
+.formInput{
+    height: 2rem;
+    border: none;
+    width: 80%;
+    padding: 5px;
+    outline: none;
+        
+}
+label{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}

@@ -1,0 +1,11 @@
+.ToDo {
+  background-color: tomato;
+  height: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 30px 30px;
+  align-items: center;
+  margin: 5px 0;
+  padding: 0 5px;
+  text-align: left;
+  padding-left: 1rem;
+}
