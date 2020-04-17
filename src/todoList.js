@@ -7,10 +7,7 @@ class ToDoList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      todoItems:
-        JSON.parse(window.localStorage.getItem('ToDoItemsList')).length !== 0
-          ? JSON.parse(window.localStorage.getItem('ToDoItemsList'))
-          : [],
+      todoItems: JSON.parse(window.localStorage.getItem('ToDoItemsList')) || [],
     }
   }
 
