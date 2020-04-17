@@ -7,15 +7,21 @@ class ToDoList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      todoItems: [],
+      todoItems:
+        JSON.parse(window.localStorage.getItem('ToDoItemsList')).length !== 0
+          ? JSON.parse(window.localStorage.getItem('ToDoItemsList'))
+          : [],
     }
   }
 
   addToList(inputValueObject) {
-    console.log(inputValueObject)
-    this.setState({
-      todoItems: [...this.state.todoItems, inputValueObject],
-    })
+    let newArray = [...this.state.todoItems, inputValueObject]
+    this.setState(
+      {
+        todoItems: newArray,
+      },
+      window.localStorage.setItem('ToDoItemsList', JSON.stringify(newArray))
+    )
   }
 
   handleDelete(id) {
@@ -28,15 +34,21 @@ class ToDoList extends Component {
     })
   }
   handleEdit(id, editedText) {
-    this.setState({
-      todoItems: this.state.todoItems.map((item) => {
-        if (item.id === id) {
-          item.task = editedText
-        }
-        return item
-      }),
+    let newEditedArray = this.state.todoItems.map((item) => {
+      if (item.id === id) {
+        item.task = editedText
+      }
+      return item
     })
-    console.log(this.state.todoItems)
+    this.setState(
+      {
+        todoItems: newEditedArray,
+      },
+      window.localStorage.setItem(
+        'ToDoItemsList',
+        JSON.stringify(newEditedArray)
+      )
+    )
   }
 
   render() {

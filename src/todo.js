@@ -52,7 +52,7 @@ class ToDo extends Component {
       <div className="ToDo">
         <div className={`todoText ${this.state.checked}`}>
           <i className="fas fa-check" onClick={this.handleCheckClick}></i>
-          <p>{this.props.text}</p>
+          <p onClick={this.handleCheckClick}>{this.props.text}</p>
         </div>
         <div className="edit">
           <i className="fas fa-pen" onClick={this.handleEditClick}></i>

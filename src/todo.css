@@ -46,8 +46,10 @@
 .todoText {
   position: relative;
   padding: 0 1rem;
+  cursor: pointer;
 }
 .true {
   text-decoration: line-through;
   opacity: 0.5;
+  transition: all 0.5s ease-in-out;
 }
