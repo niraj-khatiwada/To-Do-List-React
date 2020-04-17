@@ -12,6 +12,7 @@ class ToDoList extends Component {
   }
 
   addToList(inputValueObject) {
+    console.log(inputValueObject)
     this.setState({
       todoItems: [...this.state.todoItems, inputValueObject],
     })
@@ -26,14 +27,25 @@ class ToDoList extends Component {
       }
     })
   }
-  handleEdit() {}
+  handleEdit(actualText, editedText) {
+    this.setState({
+      todoItems: this.state.todoItems.map((item) => {
+        if (item.task === actualText) {
+          item.task = editedText
+        }
+        return item
+      }),
+    })
+    console.log(this.state.todoItems)
+  }
+
   render() {
     const items = this.state.todoItems.map((todo) => {
       return (
         <ToDo
           text={todo.task}
           key={todo.id}
-          handleEdit={this.handleEdit.bind(this)}
+          handleEdit={this.handleEdit.bind(this, todo.task)}
           handleDelete={this.handleDelete.bind(this, todo.id)}
         />
       )
