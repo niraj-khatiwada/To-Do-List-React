@@ -27,10 +27,10 @@ class ToDoList extends Component {
       }
     })
   }
-  handleEdit(actualText, editedText) {
+  handleEdit(id, editedText) {
     this.setState({
       todoItems: this.state.todoItems.map((item) => {
-        if (item.task === actualText) {
+        if (item.id === id) {
           item.task = editedText
         }
         return item
@@ -45,7 +45,7 @@ class ToDoList extends Component {
         <ToDo
           text={todo.task}
           key={todo.id}
-          handleEdit={this.handleEdit.bind(this, todo.task)}
+          handleEdit={this.handleEdit.bind(this, todo.id)}
           handleDelete={this.handleDelete.bind(this, todo.id)}
         />
       )

@@ -7,11 +7,13 @@ class ToDo extends Component {
     this.state = {
       editToggle: false,
       instance: '',
+      checked: false,
     }
     this.handleEditClick = this.handleEditClick.bind(this)
     this.handleDeleteClick = this.handleDeleteClick.bind(this)
     this.handleEditSubmit = this.handleEditSubmit.bind(this)
     this.handleEditChange = this.handleEditChange.bind(this)
+    this.handleCheckClick = this.handleCheckClick.bind(this)
   }
   handleEditClick() {
     this.setState({ editToggle: true, instance: this.props.text })
@@ -26,6 +28,9 @@ class ToDo extends Component {
   }
   handleEditChange(evt) {
     this.setState({ [evt.target.name]: evt.target.value })
+  }
+  handleCheckClick() {
+    this.setState({ checked: this.state.checked === false ? true : false })
   }
   render() {
     return this.state.editToggle === true ? (
@@ -45,7 +50,8 @@ class ToDo extends Component {
       </div>
     ) : (
       <div className="ToDo">
-        <div className="todoText">
+        <div className={`todoText ${this.state.checked}`}>
+          <i className="fas fa-check" onClick={this.handleCheckClick}></i>
           <p>{this.props.text}</p>
         </div>
         <div className="edit">
