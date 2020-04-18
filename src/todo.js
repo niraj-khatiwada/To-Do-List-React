@@ -15,6 +15,11 @@ class ToDo extends Component {
     this.handleEditChange = this.handleEditChange.bind(this)
     this.handleCheckClick = this.handleCheckClick.bind(this)
   }
+  componentDidUpdate(preProps, prevState) {
+    console.log('COmponent Updated')
+    console.log('Previous Prop', preProps)
+    console.log('Previous State', prevState)
+  }
   handleEditClick() {
     this.setState({ editToggle: true, instance: this.props.text })
   }

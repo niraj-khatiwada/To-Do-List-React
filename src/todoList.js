@@ -61,8 +61,8 @@ class ToDoList extends Component {
     })
     return (
       <div className="ToDoList">
-        <h1>To-Do List</h1>
         <div className="ToDoList-grid">
+          <h1>To-Do List</h1>
           {items}
           <ToDoForm handleFormSubmit={this.addToList.bind(this)} />
         </div>

@@ -3,6 +3,23 @@
   grid-template-columns: 0.25fr;
   justify-content: center;
 }
-.ToDoList h1{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+.ToDoList h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 1111px) {
+  .ToDoList-grid {
+    grid-template-columns: 0.5fr;
+  }
+}
+@media screen and (max-width: 576px) {
+  .ToDoList-grid {
+    grid-template-columns: 0.9fr;
+  }
+}
+@media screen and (max-width: 480px) {
+  .ToDoList-grid {
+    grid-template-columns: 0.9fr;
+  }
 }
